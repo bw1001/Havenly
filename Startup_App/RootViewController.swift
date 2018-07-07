@@ -52,7 +52,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     // MARK: - UIPageViewController delegate methods
 
-    func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewControllerSpineLocation {
+    func pageViewController(_ pageViewController: UIPageViewController, spineLocationFor orientation: UIInterfaceOrientation) -> UIPageViewController.SpineLocation {
         if (orientation == .portrait) || (orientation == .portraitUpsideDown) || (UIDevice.current.userInterfaceIdiom == .phone) {
             // In portrait orientation or on iPhone: Set the spine position to "min" and the page view controller's view controllers array to contain just one view controller. Setting the spine position to 'UIPageViewControllerSpineLocationMid' in landscape orientation sets the doubleSided property to true, so set it to false here.
             let currentViewController = self.pageViewController!.viewControllers![0]
@@ -79,7 +79,9 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
         return .mid
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        self.performSegue(withIdentifier: "login", sender: self)
+    }
 
 }
 
