@@ -16,6 +16,9 @@
 		5561723B20F02A0700B5D9F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5561723920F02A0700B5D9F7 /* LaunchScreen.storyboard */; };
 		5561724620F02A0800B5D9F7 /* Startup_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561724520F02A0800B5D9F7 /* Startup_AppTests.swift */; };
 		5561725120F02A0800B5D9F7 /* Startup_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5561725020F02A0800B5D9F7 /* Startup_AppUITests.swift */; };
+		5561726420F0332100B5D9F7 /* LoginScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5561726320F0332100B5D9F7 /* LoginScreen.xib */; settings = {ASSET_TAGS = ("Login ", ); }; };
+		5561726620F0344F00B5D9F7 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5561726520F0344F00B5D9F7 /* Storyboard.storyboard */; };
+		5561726820F035D200B5D9F7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5561726720F035D200B5D9F7 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		5561724C20F02A0800B5D9F7 /* Startup_AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Startup_AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5561725020F02A0800B5D9F7 /* Startup_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startup_AppUITests.swift; sourceTree = "<group>"; };
 		5561725220F02A0800B5D9F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5561726320F0332100B5D9F7 /* LoginScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginScreen.xib; sourceTree = "<group>"; };
+		5561726520F0344F00B5D9F7 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		5561726720F035D200B5D9F7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,9 @@
 		5561722B20F02A0400B5D9F7 /* Startup_App */ = {
 			isa = PBXGroup;
 			children = (
+				5561726020F02BC300B5D9F7 /* Model */,
+				5561725F20F02B6600B5D9F7 /* Presenter */,
+				5561725E20F02B1100B5D9F7 /* UI_Stuff */,
 				5561722C20F02A0500B5D9F7 /* AppDelegate.swift */,
 				5561722E20F02A0500B5D9F7 /* RootViewController.swift */,
 				5561723020F02A0500B5D9F7 /* DataViewController.swift */,
@@ -129,6 +138,46 @@
 				5561725220F02A0800B5D9F7 /* Info.plist */,
 			);
 			path = Startup_AppUITests;
+			sourceTree = "<group>";
+		};
+		5561725E20F02B1100B5D9F7 /* UI_Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				5561726320F0332100B5D9F7 /* LoginScreen.xib */,
+				5561726720F035D200B5D9F7 /* Launch Screen.storyboard */,
+				5561726520F0344F00B5D9F7 /* Storyboard.storyboard */,
+			);
+			path = UI_Stuff;
+			sourceTree = "<group>";
+		};
+		5561725F20F02B6600B5D9F7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5561726020F02BC300B5D9F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5561726220F02C9F00B5D9F7 /* Server_Model */,
+				5561726120F02C9200B5D9F7 /* User_Model */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5561726120F02C9200B5D9F7 /* User_Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = User_Model;
+			sourceTree = "<group>";
+		};
+		5561726220F02C9F00B5D9F7 /* Server_Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Server_Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +242,9 @@
 		5561722120F02A0400B5D9F7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					"Login ",
+				);
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Clayton kingsbury";
@@ -235,9 +287,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5561726820F035D200B5D9F7 /* Launch Screen.storyboard in Resources */,
+				5561726420F0332100B5D9F7 /* LoginScreen.xib in Resources */,
 				5561723B20F02A0700B5D9F7 /* LaunchScreen.storyboard in Resources */,
 				5561723820F02A0700B5D9F7 /* Assets.xcassets in Resources */,
 				5561723620F02A0500B5D9F7 /* Main.storyboard in Resources */,
+				5561726620F0344F00B5D9F7 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
