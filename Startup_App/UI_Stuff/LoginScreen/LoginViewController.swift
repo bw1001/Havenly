@@ -26,6 +26,12 @@ class LoginViewController: UIViewController {
             alertView.addButton(withTitle: "OK")
             alertView.show()
         } else {
+            var alertView:UIAlertView = UIAlertView()
+            alertView.title = "Login Success!"
+            alertView.message = "Please enter Username and Password"
+            alertView.delegate = self
+            alertView.addButton(withTitle: "OK")
+            alertView.show()
             
 //            var post:String = "username=\(username)&password=\(password)"
 //

@@ -9,7 +9,8 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+// TODO add in /  use all of the other information in if statements
+    
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var confPasswordTxt: UITextField!
