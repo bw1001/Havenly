@@ -17,10 +17,10 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var firstNameTxt: UITextField!
     @IBOutlet weak var lastNameTxt: UITextField!
     @IBAction func AlreadyRegister(_ sender: UIButton) {
-        let appDomain = Bundle.main.bundleIdentifier
-        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+       // let appDomain = Bundle.main.bundleIdentifier
+     //   UserDefaults.standard.removePersistentDomain(forName: appDomain!)
         
-        self.performSegue(withIdentifier: "goto_login", sender: self)
+      //  self.performSegue(withIdentifier: "goto_login", sender: self)
         
     }
     @IBAction func RegisterPressed(_ sender: UIButton) {
