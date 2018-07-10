@@ -9,11 +9,17 @@
 import Foundation
 class userModel {
     static let user = userModel()
-    let username: String
-    let password: String
+    var username: String
+    var password: String
     private init(){
         username = "test_fail"
         password = "test_fail"
+    }
+    public func setUsername(username: String){
+        self.username = username
+    }
+    public func setPassword(password: String){
+        self.password = password
     }
 }
 // access through userModel.user ...

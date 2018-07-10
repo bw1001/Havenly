@@ -11,6 +11,10 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var name: UILabel!
+    @IBAction func LogoutPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "logout", sender: self)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = userModel.user.username as String

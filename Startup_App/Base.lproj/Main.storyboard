@@ -76,7 +76,7 @@
                                 <state key="normal" title="Not Regitered?"/>
                                 <connections>
                                     <action selector="RegisterPagePressed:" destination="acD-cu-tbm" eventType="touchUpInside" id="xi9-fY-JaK"/>
-                                    <segue destination="0zK-7s-52C" kind="push" identifier="goto_register" id="73L-Ti-4El"/>
+                                    <segue destination="0zK-7s-52C" kind="modal" identifier="goto_register" id="73L-Ti-4El"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ldo-wJ-Fei">
@@ -214,7 +214,7 @@
                                 <state key="normal" title="Already Registered?"/>
                                 <connections>
                                     <action selector="AlreadyRegister:" destination="0zK-7s-52C" eventType="touchUpInside" id="bfp-uG-tUx"/>
-                                    <segue destination="acD-cu-tbm" kind="push" identifier="goto_login" id="ho6-Py-7w0"/>
+                                    <segue destination="acD-cu-tbm" kind="modal" identifier="goto_login" id="ho6-Py-7w0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -256,13 +256,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zen-Va-c5g">
-                                <rect key="frame" x="166" y="228" width="48" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zen-Va-c5g">
+                                <rect key="frame" x="42" y="228" width="290" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJA-hQ-hDb">
+                                <rect key="frame" x="163" y="537" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="LogoutPressed:" destination="wDe-fI-eKJ" eventType="touchUpInside" id="zQ1-Yf-Sv0"/>
+                                    <segue destination="acD-cu-tbm" kind="modal" identifier="logout" id="SJg-UF-nit"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Cx2-le-oLZ"/>
@@ -295,8 +304,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="73L-Ti-4El"/>
-        <segue reference="AEq-L0-Qug"/>
-        <segue reference="ho6-Py-7w0"/>
+        <segue reference="FT2-aH-fZ7"/>
+        <segue reference="SJg-UF-nit"/>
     </inferredMetricsTieBreakers>
 </document>

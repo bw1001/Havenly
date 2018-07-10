@@ -20,7 +20,7 @@ class RegisterViewController: UIViewController {
        // let appDomain = Bundle.main.bundleIdentifier
      //   UserDefaults.standard.removePersistentDomain(forName: appDomain!)
         
-      //  self.performSegue(withIdentifier: "goto_login", sender: self)
+        self.performSegue(withIdentifier: "goto_login", sender: self)
         
     }
     @IBAction func RegisterPressed(_ sender: UIButton) {
@@ -45,6 +45,10 @@ class RegisterViewController: UIViewController {
             alertView.addButton(withTitle: "OK")
             alertView.show()
         } else {
+            //if successful
+            userModel.user.setUsername(username: username as String)
+            userModel.user.setPassword(password: password as String)
+            
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Sign Up Success!"
             alertView.message = "Now Figure out the Server"

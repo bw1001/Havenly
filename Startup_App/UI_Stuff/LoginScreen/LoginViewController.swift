@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var usernameTxt: UITextField!
+    // Check username and password for useable characters/ spaces
     @IBAction func LoginPressed(_ sender: UIButton) {
         var username:String = usernameTxt.text! // I added the ! to both of these so I dont know if that will work
         var password:String = passwordTxt.text!
@@ -26,9 +27,12 @@ class LoginViewController: UIViewController {
             alertView.addButton(withTitle: "OK")
             alertView.show()
         } else {
+            //if successful
+            userModel.user.setUsername(username: username)
+            userModel.user.setPassword(password: password)
             var alertView:UIAlertView = UIAlertView()
             alertView.title = "Login Success!"
-            alertView.message = "Please enter Username and Password"
+            alertView.message = "Now Work on Server"
             alertView.delegate = self
             alertView.addButton(withTitle: "OK")
             alertView.show()
@@ -130,7 +134,7 @@ class LoginViewController: UIViewController {
         // let appDomain = Bundle.main.bundleIdentifier
         //UserDefaults.standard.removePersistentDomain(forName: appDomain!)
 
-        //self.performSegue(withIdentifier: "goto_register", sender: self)
+        self.performSegue(withIdentifier: "goto_register", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
