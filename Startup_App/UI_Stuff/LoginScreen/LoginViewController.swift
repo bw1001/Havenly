@@ -129,7 +129,7 @@ class LoginViewController: UIViewController {
     @IBAction func RegisterPagePressed(_ sender: UIButton) {
         let appDomain = Bundle.main.bundleIdentifier
         UserDefaults.standard.removePersistentDomain(forName: appDomain!)
-        
+
         self.performSegue(withIdentifier: "goto_register", sender: self)
     }
     override func viewDidLoad() {

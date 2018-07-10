@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var name: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         name.text = userModel.user.username as String

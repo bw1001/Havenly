@@ -26,7 +26,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
         self.pageViewController!.dataSource = self.modelController
 
-        self.addChildViewController(self.pageViewController!)
+        self.addChild(self.pageViewController!)
         self.view.addSubview(self.pageViewController!.view)
 
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
@@ -36,7 +36,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         }
         self.pageViewController!.view.frame = pageViewRect
 
-        self.pageViewController!.didMove(toParentViewController: self)
+        self.pageViewController!.didMove(toParent: self)
     }
 
     var modelController: ModelController {

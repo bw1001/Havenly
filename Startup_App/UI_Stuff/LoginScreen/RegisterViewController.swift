@@ -16,6 +16,13 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confPasswordTxt: UITextField!
     @IBOutlet weak var firstNameTxt: UITextField!
     @IBOutlet weak var lastNameTxt: UITextField!
+    @IBAction func AlreadyRegister(_ sender: UIButton) {
+        let appDomain = Bundle.main.bundleIdentifier
+        UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+        
+        self.performSegue(withIdentifier: "goto_login", sender: self)
+        
+    }
     @IBAction func RegisterPressed(_ sender: UIButton) {
         var username:NSString = usernameTxt.text! as NSString
         var password:NSString = passwordTxt.text! as NSString
