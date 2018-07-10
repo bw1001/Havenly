@@ -27,97 +27,97 @@ class LoginViewController: UIViewController {
             alertView.show()
         } else {
             
-            var post:String = "username=\(username)&password=\(password)"
-            
-            NSLog("PostData: %@",post);
-            
-            var url:NSURL = NSURL(string: "https://dipinkrishna.com/jsonlogin2.php")! // this is used to contact server?
-            
-            var postData:Data = post.data(using: String.Encoding.ascii)!
-            
-            var postLength:String = String( postData.count )
-            
-            var request:NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
-            request.httpMethod = "POST"
-            request.httpBody = postData
-            request.setValue(postLength, forHTTPHeaderField: "Content-Length")
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-            
-            var reponseError: NSError?
-            var response: URLResponse?
-            
-            var urlData: NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse:&response, error:&reponseError)
-            
-            if ( urlData != nil ) {
-                let res = response as! HTTPURLResponse!;
-                
-                NSLog("Response code: %ld", (res?.statusCode)!);
-                
-                if ((res?.statusCode)! >= 200 && (res?.statusCode)! < 300)
-                {
-                    var responseData:NSString  = NSString(data:urlData! as Data, encoding:String.Encoding.utf8.rawValue)!
-                    
-                    NSLog("Response ==> %@", responseData);
-                    
-                    var error: NSError?
-                    
-                    let jsonData:NSDictionary = JSONSerialization.JSONObjectWithData(urlData!, options:JSONSerialization.ReadingOptions.MutableContainers , error: &error) as NSDictionary
-                    
-                    
-                    let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
-                    
-                    //[jsonData[@"success"] integerValue];
-                    
-                    NSLog("Success: %ld", success);
-                    
-                    if(success == 1)
-                    {
-                        NSLog("Login SUCCESS");
-                        
-                        var prefs:UserDefaultsUserDefaults = NSUserDefaults.standardUserDefaults()
-                        prefs.set(username, forKey: "USERNAME")
-                        prefs.setInteger(1, forKey: "ISLOGGEDIN")
-                        prefs.synchronize()
-                        
-                        self.dismiss(animated: true, completion: nil)
-                    } else {
-                        var error_msg:NSString
-                        
-                        if jsonData["error_message"] as? NSString != nil {
-                            error_msg = jsonData["error_message"] as! NSString
-                        } else {
-                            error_msg = "Unknown Error"
-                        }
-                        var alertView:UIAlertView = UIAlertView()
-                        alertView.title = "Sign in Failed!"
-                        alertView.message = error_msg as String
-                        alertView.delegate = self
-                        alertView.addButton(withTitle: "OK")
-                        alertView.show()
-                        
-                    }
-                    
-                } else {
-                    var alertView:UIAlertView = UIAlertView()
-                    alertView.title = "Sign in Failed!"
-                    alertView.message = "Connection Failed"
-                    alertView.delegate = self
-                    alertView.addButton(withTitle: "OK")
-                    alertView.show()
-                }
-            } else {
-                var alertView:UIAlertView = UIAlertView()
-                alertView.title = "Sign in Failed!"
-                alertView.message = "Connection Failure"
-                if let error = reponseError {
-                    alertView.message = (error.localizedDescription)
-                }
-                alertView.delegate = self
-                alertView.addButton(withTitle: "OK")
-                alertView.show()
-            }
+//            var post:String = "username=\(username)&password=\(password)"
+//
+//            NSLog("PostData: %@",post);
+//
+//            var url:NSURL = NSURL(string: "https://dipinkrishna.com/jsonlogin2.php")! // this is used to contact server?
+//
+//            var postData:Data = post.data(using: String.Encoding.ascii)!
+//
+//            var postLength:String = String( postData.count )
+//
+//            var request:NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
+//            request.httpMethod = "POST"
+//            request.httpBody = postData
+//            request.setValue(postLength, forHTTPHeaderField: "Content-Length")
+//            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//            request.setValue("application/json", forHTTPHeaderField: "Accept")
+//
+//
+//            var reponseError: NSError?
+//            var response: URLResponse?
+//
+//            var urlData: NSData? = NSURLConnection.sendSynchronousRequest(request, returningResponse:&response, error:&reponseError)
+//
+//            if ( urlData != nil ) {
+//                let res = response as! HTTPURLResponse!;
+//
+//                NSLog("Response code: %ld", (res?.statusCode)!);
+//
+//                if ((res?.statusCode)! >= 200 && (res?.statusCode)! < 300)
+//                {
+//                    var responseData:NSString  = NSString(data:urlData! as Data, encoding:String.Encoding.utf8.rawValue)!
+//
+//                    NSLog("Response ==> %@", responseData);
+//
+//                    var error: NSError?
+//
+//                    let jsonData:NSDictionary = JSONSerialization.JSONObjectWithData(urlData!, options:JSONSerialization.ReadingOptions.MutableContainers , error: &error) as NSDictionary
+//
+//
+//                    let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
+//
+//                    //[jsonData[@"success"] integerValue];
+//
+//                    NSLog("Success: %ld", success);
+//
+//                    if(success == 1)
+//                    {
+//                        NSLog("Login SUCCESS");
+//
+//                        var prefs:UserDefaultsUserDefaults = NSUserDefaults.standardUserDefaults()
+//                        prefs.set(username, forKey: "USERNAME")
+//                        prefs.setInteger(1, forKey: "ISLOGGEDIN")
+//                        prefs.synchronize()
+//
+//                        self.dismiss(animated: true, completion: nil)
+//                    } else {
+//                        var error_msg:NSString
+//
+//                        if jsonData["error_message"] as? NSString != nil {
+//                            error_msg = jsonData["error_message"] as! NSString
+//                        } else {
+//                            error_msg = "Unknown Error"
+//                        }
+//                        var alertView:UIAlertView = UIAlertView()
+//                        alertView.title = "Sign in Failed!"
+//                        alertView.message = error_msg as String
+//                        alertView.delegate = self
+//                        alertView.addButton(withTitle: "OK")
+//                        alertView.show()
+//
+//                    }
+//
+//                } else {
+//                    var alertView:UIAlertView = UIAlertView()
+//                    alertView.title = "Sign in Failed!"
+//                    alertView.message = "Connection Failed"
+//                    alertView.delegate = self
+//                    alertView.addButton(withTitle: "OK")
+//                    alertView.show()
+//                }
+//            } else {
+//                var alertView:UIAlertView = UIAlertView()
+//                alertView.title = "Sign in Failed!"
+//                alertView.message = "Connection Failure"
+//                if let error = reponseError {
+//                    alertView.message = (error.localizedDescription)
+//                }
+//                alertView.delegate = self
+//                alertView.addButton(withTitle: "OK")
+//                alertView.show()
+//            }
         }
     }
     @IBAction func RegisterPagePressed(_ sender: UIButton) {

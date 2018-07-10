@@ -16,4 +16,6 @@ class userModel {
         password = "test_fail"
     }
 }
+// access through userModel.user ...
+
 
