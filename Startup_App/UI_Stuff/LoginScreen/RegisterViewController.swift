@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
             alertView.delegate = self
             alertView.addButton(withTitle: "OK")
             alertView.show()
-            
+            self.performSegue(withIdentifier: "reg_in", sender: self)
 //            var post:NSString = "username=\(username)&password=\(password)&c_password=\(confirm_password)" as NSString
 //
 //            NSLog("PostData: %@",post);

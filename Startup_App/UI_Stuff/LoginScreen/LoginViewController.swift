@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
             alertView.delegate = self
             alertView.addButton(withTitle: "OK")
             alertView.show()
-            
+            self.performSegue(withIdentifier: "log_in", sender: self)
 //            var post:String = "username=\(username)&password=\(password)"
 //
 //            NSLog("PostData: %@",post);

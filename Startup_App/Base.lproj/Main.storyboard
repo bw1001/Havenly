@@ -60,7 +60,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="LoginPressed:" destination="acD-cu-tbm" eventType="touchUpInside" id="nxd-Fl-gFc"/>
-                                    <segue destination="wDe-fI-eKJ" kind="modal" id="AEq-L0-Qug"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXK-uQ-sOn">
@@ -108,6 +107,7 @@
                     <connections>
                         <outlet property="passwordTxt" destination="eQg-PR-CRW" id="HTi-c5-glm"/>
                         <outlet property="usernameTxt" destination="ldo-wJ-Fei" id="7r4-XE-xTi"/>
+                        <segue destination="wDe-fI-eKJ" kind="modal" identifier="log_in" id="YXa-IH-HiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpI-3j-Dlw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,7 +149,6 @@
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="RegisterPressed:" destination="0zK-7s-52C" eventType="touchUpInside" id="mnC-TC-zv8"/>
-                                    <segue destination="wDe-fI-eKJ" kind="modal" id="FT2-aH-fZ7"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hHv-gc-SF9">
@@ -228,6 +227,7 @@
                         <outlet property="lastNameTxt" destination="mYQ-VB-5z6" id="7kc-mk-ns0"/>
                         <outlet property="passwordTxt" destination="xYO-WO-0N9" id="PCs-kM-pj6"/>
                         <outlet property="usernameTxt" destination="Gy2-mi-7us" id="8ry-3R-IQ5"/>
+                        <segue destination="wDe-fI-eKJ" kind="modal" identifier="reg_in" id="D3M-YC-7Mf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEw-qS-Ldg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,6 +276,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Cx2-le-oLZ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NSE-0q-mnS"/>
                     <connections>
                         <outlet property="name" destination="zen-Va-c5g" id="QGf-Nv-isU"/>
                     </connections>
@@ -304,7 +305,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FT2-aH-fZ7"/>
-        <segue reference="SJg-UF-nit"/>
+        <segue reference="D3M-YC-7Mf"/>
+        <segue reference="ho6-Py-7w0"/>
     </inferredMetricsTieBreakers>
 </document>
