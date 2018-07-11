@@ -74,8 +74,15 @@ class LoginViewController: UIViewController {
 //                    let jsonData:NSDictionary = JSONSerialization.JSONObjectWithData(urlData!, options:JSONSerialization.ReadingOptions.MutableContainers , error: &error) as NSDictionary
 //
 //
-            let success:NSInteger = (returnInfo as! NSDictionary).value(forKey: "success") as! NSInteger
-
+            //let success:NSInteger = (returnInfo as! NSDictionary).value(forKey: "success") as! NSInteger
+            var success = 0
+            if (returnInfo as! String).isEqual("\"success\""){
+                success = 1
+            }
+            else {
+                success = 0
+            }
+            
                     //[jsonData[@"success"] integerValue];
 
                     NSLog("Success: %ld", success);
@@ -92,16 +99,16 @@ class LoginViewController: UIViewController {
                         alertView.show()
                         self.performSegue(withIdentifier: "log_in", sender: self)
                     } else {
-                        var error_msg:NSString
-
-                        if (returnInfo as! NSDictionary)["error_message"] as? NSString != nil {
-                            error_msg = (returnInfo as! NSDictionary)["error_message"] as! NSString
-                        } else {
-                            error_msg = "Unknown Error"
-                        }
+//                        var error_msg:NSString
+//
+//                        if (returnInfo as! NSDictionary)["error_message"] as? NSString != nil {
+//                            error_msg = (returnInfo as! NSDictionary)["error_message"] as! NSString
+//                        } else {
+//                            error_msg = "Unknown Error"
+//                        }
                         var alertView:UIAlertView = UIAlertView()
                         alertView.title = "Sign in Failed!"
-                        alertView.message = error_msg as String
+                        alertView.message = "error_msg" as String
                         alertView.delegate = self
                         alertView.addButton(withTitle: "OK")
                         alertView.show()

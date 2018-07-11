@@ -18,7 +18,7 @@ class contactServer{
 
         
         // use different urls?
-        var url:NSURL = NSURL(string: "https://192.168.1.35:8080/login")! // this is used to contact server?
+        var url:NSURL = NSURL(string: "http://192.168.1.42:8080/login")! // this is used to contact server?
 
             //var postData:Data = post.data(using: String.Encoding.ascii)!
 
@@ -52,19 +52,19 @@ class contactServer{
                     NSLog("Response ==> %@", responseData);
                     
                     var error: NSError?
-                    do {
-                        let jsonData:NSDictionary = try JSONSerialization.jsonObject(with: urlData! as Data, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
-                        let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
-                        
-                        //[jsonData[@"success"] integerValue];
-                        
-                        NSLog("Success: %ld", success);
-                        return jsonData
-                    }
-                    catch{
-                        print("Error in Networking 2")
-                    }
-                    
+//                    do {
+//                        let jsonData:NSDictionary = try JSONSerialization.jsonObject(with: urlData! as Data, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+//                        let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
+//
+//                        //[jsonData[@"success"] integerValue];
+//
+//                        NSLog("Success: %ld", success);
+//                        return jsonData
+//                    }
+//                    catch{
+//                        print(error)
+//                    }
+                    return responseData
                     
                 }
             }
