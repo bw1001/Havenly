@@ -16,7 +16,9 @@ class contactServer{
         
            // NSLog("PostData: %@",post);
 
-        var url:NSURL = NSURL(string: "https://192.168.1.35/8080/")! // this is used to contact server?
+        
+        // use different urls?
+        var url:NSURL = NSURL(string: "https://192.168.1.35:8080/login")! // this is used to contact server?
 
             //var postData:Data = post.data(using: String.Encoding.ascii)!
 

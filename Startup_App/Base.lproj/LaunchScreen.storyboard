@@ -12,9 +12,10 @@
         <scene sceneID="bGv-Ut-lBX">
             <objects>
                 <viewController id="4Nc-0R-4ij" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="laS-qB-z2v">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="36565370_200879877297778_4131057063218380800_n" id="nDI-dJ-Nnp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0Z-md-D0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,4 +23,7 @@
             <point key="canvasLocation" x="405" y="-517"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="36565370_200879877297778_4131057063218380800_n" width="788" height="788"/>
+    </resources>
 </document>
