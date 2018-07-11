@@ -9,7 +9,9 @@
 import Foundation
 
 class contactServer{
-    func Contact(info: [infoToSend]) -> Any{
+    static let instance = contactServer()
+    private init(){}
+    public func Contact(info: [infoToSend]) -> Any{
         //var post:String = "username=\(username)&password=\(password)"
         
            // NSLog("PostData: %@",post);

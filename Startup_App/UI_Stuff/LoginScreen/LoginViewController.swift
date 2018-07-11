@@ -30,13 +30,11 @@ class LoginViewController: UIViewController {
             //if successful
             userModel.user.setUsername(username: username)
             userModel.user.setPassword(password: password)
-            var alertView:UIAlertView = UIAlertView()
-            alertView.title = "Login Success!"
-            alertView.message = "Now Work on Server"
-            alertView.delegate = self
-            alertView.addButton(withTitle: "OK")
-            alertView.show()
-            self.performSegue(withIdentifier: "log_in", sender: self)
+            var info =  [infoToSend]()
+            info.append(infoToSend.init(label: "password", info: password))
+            info.append(infoToSend.init(label: "username", info: username))
+            var returnInfo = contactServer.instance.Contact(info: info)
+            
 //            var post:String = "username=\(username)&password=\(password)"
 //
 //            NSLog("PostData: %@",post);
@@ -76,58 +74,41 @@ class LoginViewController: UIViewController {
 //                    let jsonData:NSDictionary = JSONSerialization.JSONObjectWithData(urlData!, options:JSONSerialization.ReadingOptions.MutableContainers , error: &error) as NSDictionary
 //
 //
-//                    let success:NSInteger = jsonData.value(forKey: "success") as! NSInteger
-//
-//                    //[jsonData[@"success"] integerValue];
-//
-//                    NSLog("Success: %ld", success);
-//
-//                    if(success == 1)
-//                    {
-//                        NSLog("Login SUCCESS");
-//
-//                        var prefs:UserDefaultsUserDefaults = NSUserDefaults.standardUserDefaults()
-//                        prefs.set(username, forKey: "USERNAME")
-//                        prefs.setInteger(1, forKey: "ISLOGGEDIN")
-//                        prefs.synchronize()
-//
-//                        self.dismiss(animated: true, completion: nil)
-//                    } else {
-//                        var error_msg:NSString
-//
-//                        if jsonData["error_message"] as? NSString != nil {
-//                            error_msg = jsonData["error_message"] as! NSString
-//                        } else {
-//                            error_msg = "Unknown Error"
-//                        }
-//                        var alertView:UIAlertView = UIAlertView()
-//                        alertView.title = "Sign in Failed!"
-//                        alertView.message = error_msg as String
-//                        alertView.delegate = self
-//                        alertView.addButton(withTitle: "OK")
-//                        alertView.show()
-//
-//                    }
-//
-//                } else {
-//                    var alertView:UIAlertView = UIAlertView()
-//                    alertView.title = "Sign in Failed!"
-//                    alertView.message = "Connection Failed"
-//                    alertView.delegate = self
-//                    alertView.addButton(withTitle: "OK")
-//                    alertView.show()
-//                }
-//            } else {
-//                var alertView:UIAlertView = UIAlertView()
-//                alertView.title = "Sign in Failed!"
-//                alertView.message = "Connection Failure"
-//                if let error = reponseError {
-//                    alertView.message = (error.localizedDescription)
-//                }
-//                alertView.delegate = self
-//                alertView.addButton(withTitle: "OK")
-//                alertView.show()
-//            }
+            let success:NSInteger = (returnInfo as! NSDictionary).value(forKey: "success") as! NSInteger
+
+                    //[jsonData[@"success"] integerValue];
+
+                    NSLog("Success: %ld", success);
+
+                    if(success == 1)
+                    {
+                        NSLog("Login SUCCESS");
+
+                        var alertView:UIAlertView = UIAlertView()
+                        alertView.title = "Login Success!"
+                        alertView.message = "Now Work on Server"
+                        alertView.delegate = self
+                        alertView.addButton(withTitle: "OK")
+                        alertView.show()
+                        self.performSegue(withIdentifier: "log_in", sender: self)
+                    } else {
+                        var error_msg:NSString
+
+                        if (returnInfo as! NSDictionary)["error_message"] as? NSString != nil {
+                            error_msg = (returnInfo as! NSDictionary)["error_message"] as! NSString
+                        } else {
+                            error_msg = "Unknown Error"
+                        }
+                        var alertView:UIAlertView = UIAlertView()
+                        alertView.title = "Sign in Failed!"
+                        alertView.message = error_msg as String
+                        alertView.delegate = self
+                        alertView.addButton(withTitle: "OK")
+                        alertView.show()
+
+                    }
+
+            
         }
     }
     @IBAction func RegisterPagePressed(_ sender: UIButton) {
