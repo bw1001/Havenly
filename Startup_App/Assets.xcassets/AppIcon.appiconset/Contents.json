@@ -86,21 +86,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "36533498_200870393965393_2194006098095112192_n.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "36549012_201078973944535_5458847491266969600_n.png",
-      "unassigned" : true,
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "filename" : "36565370_200879877297778_4131057063218380800_n.png",
-      "unassigned" : true,
+      "size" : "1024x1024",
       "scale" : "1x"
     }
   ],
